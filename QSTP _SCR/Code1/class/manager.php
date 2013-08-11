@@ -72,5 +72,9 @@
 	public function add_driver($name){
 		mysql_query('INSERT INTO define (name) VALUES ("'.$name.'")')or die(mysql_error());		
 	}
+	public function deleteClear()
+	{
+		mysql_query("DELETE FROM define")or die(mysql_error());	
+	}
  }
  ?>

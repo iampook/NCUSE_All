@@ -1,5 +1,6 @@
 <?php
 
+	//include '../Config.php';
 	include 'config.php';
 
 	class Driver{
@@ -8,7 +9,7 @@
 		private $Name;
 					
 		public function __construct(){
-			//$db= new Config();
+			$db= new Config();
 		}
 		
 		public function login($password){			
@@ -40,7 +41,7 @@
 
 	public function get_show()
 	{
-		$con=new Config();
+		$con=new Config;
 		$con-> __construct();
 		$run=mysql_query('SELECT name, status FROM define');
 				mysql_query("SET NAMES UTF8");
@@ -49,14 +50,14 @@
 	
 	public function update_customer($latitude,$longitude,$user,$address,$mobile,$cus_id)
 	{
-		$con=new Config();
+		$con=new Config;
 		$con->__construct();
 		mysql_query("update customers set Latitude='".$latitude."', Longitude='".$longitude."',Name='".$user."',Address='".$address."', Mobile='".$mobile."' where Cus_Id='".$cus_id."'")	or die(mysql_error());
 		header("Location:../Code1/routing.php");
 	}
 	public function delect_customer($latitude,$longitude,$user,$address,$mobile,$cus_id)
 	{
-		$con=new Config();
+		$con=new Config;
 		$con->__construct();
 		mysql_query("DELETE FROM customers WHERE Name='".$user."';")or die(mysql_error());
 		header("Location:../Code1/routing.php");
