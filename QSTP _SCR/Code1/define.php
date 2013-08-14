@@ -19,6 +19,7 @@ if (!$manager->get_session())
 <head>
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.9.1.min.js"></script>
 <link href="css/bootstrap.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
@@ -58,28 +59,62 @@ body {
 			$st="checked='checked'";
 			$rn="";
 			$p="";
+			echo "<tr><td>".$arr['name']."</td>
+			<td><form action='' name='frm_mg_repair' method='post'>
+			<input name='name' id='name' type='hidden' value=".$arr['name'].">
+			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง' >ว่าง
+			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
+			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
+			<input name='bt_uprepair1' class='btn btn-success' type='submit'  value='บันทึก'>
+		   </form></td></tr>
+			";
 		}
-		else if($arr['status']=="วิ่ง")
+		/*else if($arr['status']=="วิ่ง")
 		{
 			$st="";
 			$rn="checked='checked'";
 			$p="";
+			echo "<tr><td>".$arr['name']."</td>
+			<td><form action='' name='frm_mg_repair' method='post'>
+			<input name='name' id='name' type='hidden' value=".$arr['name'].">
+			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง'>ว่าง
+			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
+			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
+			<input name='bt_uprepair2' class='btn btn-success' type='submit'  value='บันทึก'>
+		   </form></td></tr>
+			";
 		}
 		else if($arr['status']=="พัก")
 		{
+			//$manager->deleteOne($_POST['');
 			$st="";
 			$rn="";
 			$p="checked='checked'";
+			echo "<tr><td>".$arr['name']."</td>
+			<td><form action='' name='frm_mg_repair' method='post'>
+			<input name='name' id='name' type='hidden' value=".$arr['name'].">
+			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง'>ว่าง
+			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
+			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
+			<input name='bt_uprepair3' class='btn btn-success' type='submit'  value='บันทึก'>
+		   </form></td></tr>
+			";
+		}*/
+		else
+		{
+			$st="";
+			$rn="";
+			$p="";
+			echo "<tr><td>".$arr['name']."</td>
+			<td><form action='' name='frm_mg_repair' method='post'>
+			<input name='name' id='name' type='hidden' value=".$arr['name'].">
+			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง'>ว่าง
+			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
+			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
+			<input name='bt_uprepair4' class='btn btn-success' type='submit'  value='บันทึก'>
+		   </form></td></tr>
+			";
 		}
-		echo "<tr><td>".$arr['name']."</td>
-		<td><form action='' name='frm_mg_repair' method='post'>
-		<input name='name' type='hidden' value=".$arr['name'].">
-        <input name='repair' type='radio'  ".$st."   value='ว่าง'>ว่าง
-        <input name='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
-        <input name='repair' type='radio'  ".$p." value='พัก'>พัก
-		<input name='bt_uprepair' class='btn btn-success' type='submit'  value='บันทึก' >
-       </form></td></tr>
-		";
 	}
 	if($_POST)
 	{
@@ -94,7 +129,19 @@ body {
    
   </table>
    <a href="addDriver.php"><input type="button" class="btn-large btn btn-primary" name="button"  id="button" value="AddDriver"/></a>
+   <input type="button" class="btn-large btn btn-danger" name="button"  id="button" value="ClearDriver" onclick="clearAll()"/>
   </center>
+<script>
+	
+	function clearAll()
+	{
+		$.post("clearAll.php",function(data)
+		{
+			window.location.reload();
+			alert("ลบข้อมูลเสร็จแล้ว");
+		});
+	}
 
+</script>
 </body>
 </html>

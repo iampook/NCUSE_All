@@ -6,7 +6,7 @@ function initialize() { // ฟังก์ชันแสดงแผนที�
     GGM=new Object(google.maps); // เก็บตัวแปร google.maps Object ไว้ในตัวแปร GGM  
     geocoder = new GGM.Geocoder(); // เก็บตัวแปร google.maps.Geocoder Object  
     // กำหนดจุดเริ่มต้นของแผนที่  
-    var my_Latlng  = new GGM.LatLng(18.885932,98.660338);  
+    var my_Latlng  = new GGM.LatLng(18.688852,98.920831);  
     var my_mapTypeId=GGM.MapTypeId.ROADMAP; // กำหนดรูปแบบแผนที่ที่แสดง  
     // กำหนด DOM object ที่จะเอาแผนที่ไปแสดง ที่นี้คือ div id=map_canvas  
     var my_DivObj=$("#map_canvas")[0];  

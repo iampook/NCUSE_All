@@ -77,7 +77,7 @@ while($res = $db->fetch_array($query))
 		<form action='update.php' id=".$i." method='post' name='frm_edit'>
 		<input name='id_user' type='hidden' value=".$res['Cus_Id'].">
 		<input type='submit' class='btn btn-success' style='font-size:20px' value='Edit'>
-		<input type='button' class='btn btn-danger' style='font-size:20px'  onclick='del(".$res['Cus_Id'].")' value='Delete'>
+		<input type='button' class='btn btn-danger' style='font-size:20px'  onclick='del(".$res['Cus_Id'].")' value='Clear'>
 		</form><br>";
 		$i++;
 	} 

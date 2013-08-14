@@ -4,7 +4,7 @@
 	 $db_host = "localhost";
 	 $db_user = "root";
 	 $db_pass = "";
-	 $db_name = "pizza";
+	 $db_name = "b542150005_workshop";
 
 
 
