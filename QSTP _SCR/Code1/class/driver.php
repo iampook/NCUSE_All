@@ -35,12 +35,22 @@
 		{
 			return $_SESSION['login'];
 		}
+/***************************************************************************************
+ฟังก์ชั่น การเพิ่มลูกค้าในฐานข้อมูล
+
+by parichart
+***************************************************************************************/
 		public function add_customer($Latitude,$Longitude,$Name,$Address,$Mobile){
 		mysql_query('INSERT INTO customers (Latitude,Longitude,Name,Address,Mobile) VALUES ("'.$Latitude.'","'.$Longitude.'","'.$Name.'","'.$Address.'","'.$Mobile.'")')or die(mysql_error());
 		}
 
 	public function get_show()
 	{
+/***************************************************************************************
+ฟังก์ชั่นโชว์สถานะพนักงานส่ง
+
+by parichart
+***************************************************************************************/
 		$con=new Config;
 		$con-> __construct();
 		$run=mysql_query('SELECT name, status FROM define');
@@ -50,6 +60,11 @@
 	
 	public function update_customer($latitude,$longitude,$user,$address,$mobile,$cus_id)
 	{
+/***************************************************************************************
+ฟังก์ชั่น การแก้ไขข้อมูลลูกค้า
+
+by parichart
+***************************************************************************************/
 		$con=new Config;
 		$con->__construct();
 		mysql_query("update customers set Latitude='".$latitude."', Longitude='".$longitude."',Name='".$user."',Address='".$address."', Mobile='".$mobile."' where Cus_Id='".$cus_id."'")	or die(mysql_error());
@@ -57,6 +72,11 @@
 	}
 	public function delect_customer($latitude,$longitude,$user,$address,$mobile,$cus_id)
 	{
+/***************************************************************************************
+ฟังก์ชั่น การลบข้อมุลลูกค้าเมื่อพนักงานส่งได้ส่งรายการอาหารให้ลูกค้าแล้ว
+
+by parichart
+***************************************************************************************/
 		$con=new Config;
 		$con->__construct();
 		mysql_query("DELETE FROM customers WHERE Name='".$user."';")or die(mysql_error());

@@ -54,6 +54,10 @@ body {
 	$show = $manager->get_show();
 	while ($arr = mysql_fetch_array($show))
 	{
+/***************************************************************************************
+การแสดงพนักงานส่ง และกำหนดพนักงานส่ง
+by parichart
+***************************************************************************************/
 		 if($arr['status']=="ว่าง")
 		{
 			$st="checked='checked'";
@@ -132,7 +136,11 @@ body {
    <input type="button" class="btn-large btn btn-danger" name="button"  id="button" value="ClearDriver" onclick="clearAll()"/>
   </center>
 <script>
-	
+/***************************************************************************************
+การclear พนักงานส่งหลังจากร้านปิด
+
+by parichart
+***************************************************************************************/
 	function clearAll()
 	{
 		$.post("clearAll.php",function(data)
