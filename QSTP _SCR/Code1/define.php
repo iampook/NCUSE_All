@@ -54,10 +54,6 @@ body {
 	$show = $manager->get_show();
 	while ($arr = mysql_fetch_array($show))
 	{
-/***************************************************************************************
-การแสดงพนักงานส่ง และกำหนดพนักงานส่ง
-by parichart
-***************************************************************************************/
 		 if($arr['status']=="ว่าง")
 		{
 			$st="checked='checked'";
@@ -69,11 +65,11 @@ by parichart
 			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง' >ว่าง
 			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
 			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
-			<input name='bt_uprepair1' class='btn btn-success' type='submit'  value='บันทึก'>
+			<input name='bt_uprepair' class='btn btn-success' type='submit'  value='บันทึก'>
 		   </form></td></tr>
 			";
 		}
-		/*else if($arr['status']=="วิ่ง")
+		else if($arr['status']=="วิ่ง")
 		{
 			$st="";
 			$rn="checked='checked'";
@@ -84,13 +80,12 @@ by parichart
 			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง'>ว่าง
 			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
 			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
-			<input name='bt_uprepair2' class='btn btn-success' type='submit'  value='บันทึก'>
+			<input name='bt_uprepair' class='btn btn-success' type='submit'  value='บันทึก'>
 		   </form></td></tr>
 			";
 		}
 		else if($arr['status']=="พัก")
 		{
-			//$manager->deleteOne($_POST['');
 			$st="";
 			$rn="";
 			$p="checked='checked'";
@@ -100,10 +95,10 @@ by parichart
 			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง'>ว่าง
 			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
 			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
-			<input name='bt_uprepair3' class='btn btn-success' type='submit'  value='บันทึก'>
+			<input name='bt_uprepair' class='btn btn-success' type='submit'  value='บันทึก'>
 		   </form></td></tr>
 			";
-		}*/
+		}
 		else
 		{
 			$st="";
@@ -115,7 +110,7 @@ by parichart
 			<input name='repair' id='repair' type='radio'  ".$st."   value='ว่าง'>ว่าง
 			<input name='repair' id='repair' type='radio'   ".$rn." value='วิ่ง'>วิ่ง
 			<input name='repair' id='repair' type='radio'  ".$p." value='พัก'>พัก
-			<input name='bt_uprepair4' class='btn btn-success' type='submit'  value='บันทึก'>
+			<input name='bt_uprepair' class='btn btn-success' type='submit'  value='บันทึก'>
 		   </form></td></tr>
 			";
 		}
@@ -136,11 +131,7 @@ by parichart
    <input type="button" class="btn-large btn btn-danger" name="button"  id="button" value="ClearDriver" onclick="clearAll()"/>
   </center>
 <script>
-/***************************************************************************************
-การclear พนักงานส่งหลังจากร้านปิด
-
-by parichart
-***************************************************************************************/
+	
 	function clearAll()
 	{
 		$.post("clearAll.php",function(data)

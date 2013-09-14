@@ -1,11 +1,4 @@
-
 <?php
-/*****************************************************************************************************
-เป็นการเรียกใช้ class driver.php
-
-by pairchart
-
-*****************************************************************************************************/
 session_start();
 
 echo $_SESSION['Name'];
@@ -60,10 +53,6 @@ body {
 			  <td width="150"><a href="add.php"><input type="button" class="btn-large btn btn-primary"name="button"  id="button" value="        เพิ่มข้อมูลแผนที่        " /></a>
 		      </td><td><a href="edit.php"><input type="button"  class="btn-large btn btn-warning" name="button2" id="button2" value="   แก้ไขข้อมูลแผนที่  " /></a></td></tr>
 </table>
-<!------------------------------------------------------------------------------------------------------------------------------
-การดึงแผนที่ของgoogleออกมาแสดงให้เห็นพิกัด
-by parichart
-------------------------------------------------------------------------------------------------------------------------------->
    <p> <div id="map_canvas" style="height: 500px; width: 800px; float:left; margin-left:100px; margin-right:50px;" ></div> </p>
     <div align="right" style="margin-left:100px;">
       <table width="326" border=0>
@@ -94,7 +83,6 @@ by parichart
     </div>
   </form>
 </center>
-
 <script type="text/javascript">
 $(function()
 {
@@ -103,11 +91,6 @@ $(function()
 </script>
 
 <font color="#FF0000" size="+2">
-<!------------------------------------------------------------------------------------------------------------------------------
-
-การทำ validation ข้อมูล
-
-------------------------------------------------------------------------------------------------------------------------------->
 <?php 
 
 	if($_POST)
