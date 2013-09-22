@@ -61,6 +61,12 @@ body {
 <center>
 <div id="showCustomer">
 <?php 
+/***************************************************************************************
+แสดงข้อมูลลูกค้า
+และแก้ไขข้อมูลลูกค้า
+
+by parichart
+***************************************************************************************/
 include_once 'class/config.php';
 $db = new Config();
 $query = mysql_query('SELECT * FROM  customers') or die(mysql_error()); 

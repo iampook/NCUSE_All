@@ -1,4 +1,8 @@
 <?php
+/***************************************************************************************
+การเรียกใช้ file Config.php
+by parichart
+***************************************************************************************/
 
 	//include '../Config.php';
 	include 'config.php';
@@ -11,7 +15,11 @@
 		public function __construct(){
 			$db= new Config();
 		}
-		
+/***************************************************************************************
+เมตตอล login
+by parichart
+***************************************************************************************/
+
 		public function login($password){			
 				
 				$run=mysql_query('SELECT use_Id, password, Name FROM login WHERE  password="'.$password.'"');
